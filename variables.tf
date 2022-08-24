@@ -1,8 +1,3 @@
-variable "name" {
-  type = string
-  description = "ACL Name"
-}
-
 variable "content" {
   type = string
   description = "ACL content as multiline string"
@@ -13,5 +8,5 @@ variable "switches" {
     name    = string
     fabric  = string
   }))
-  description = "map of switches to configure with ACL policy"
+  description = "Map of switches to configure with ACL policy"
 }
