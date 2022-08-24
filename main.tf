@@ -17,8 +17,8 @@ locals {
   }
   ## Serial Number to Content Map ##
   sn_content_map = {
-    for switch in var.switches :
-      lookup(local.serial_numbers, switch) => var.content
+    for key,switch in var.switches :
+      lookup(local.serial_numbers, switch.name) => var.content
   }
 
 }
