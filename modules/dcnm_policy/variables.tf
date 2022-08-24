@@ -5,3 +5,8 @@ variable "serial_number" {
 variable "content" {
   type = string
 }
+
+variable "priority" {
+  type = number
+  default = 500
+}

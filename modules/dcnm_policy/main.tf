@@ -6,7 +6,7 @@ resource "dcnm_policy" "freeform" {
   template_props  =   {
                           "CONF" : var.content ## Multi-line string
                       }
-  priority        =   500
+  priority        =   var.priority
   source          =   null # ""
   entity_name     =   "SWITCH"
   entity_type     =   "SWITCH"
