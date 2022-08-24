@@ -11,5 +11,5 @@ resource "dcnm_policy" "freeform" {
   entity_name     =   "SWITCH"
   entity_type     =   "SWITCH"
   description     =   "Freeform policy to deploy ACL to target switch from Terraform"
-  template_content_type   =   "TEMPLATE_CLI"
+  template_content_type   =   "PYTHON"
 }
