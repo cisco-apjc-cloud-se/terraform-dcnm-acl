@@ -1,6 +1,6 @@
 variable "content" {
   type = string
-  description = "ACL content as multiline string"
+  description = "Switch CLI content as multiline string"
 }
 
 variable "switches" {
@@ -8,5 +8,5 @@ variable "switches" {
     name    = string
     fabric  = string
   }))
-  description = "Map of switches to configure with ACL policy"
+  description = "Map of switches to configure with freeform CLI policy"
 }

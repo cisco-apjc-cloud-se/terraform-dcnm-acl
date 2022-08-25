@@ -1,5 +1,9 @@
 # terraform-dcnm-acl
-Terraform module for deploying ACLs to DCNM/NDFC
+Terraform module for deploying freeform CLi configuration to one or more switches.  This uses the `dcnm_policy` resource to deploy `switch_freeform` type templates. This should not be used for interface-level freeform CLI.  
+
+* Access control lists (ACLs)
+* Prefix lists
+* Route-maps
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -30,8 +34,8 @@ Terraform module for deploying ACLs to DCNM/NDFC
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_content"></a> [content](#input\_content) | ACL content as multiline string | `string` | n/a | yes |
-| <a name="input_switches"></a> [switches](#input\_switches) | Map of switches to configure with ACL policy | <pre>map(object({<br>    name    = string<br>    fabric  = string<br>  }))</pre> | n/a | yes |
+| <a name="input_content"></a> [content](#input\_content) | Switch CLI content as multiline string | `string` | n/a | yes |
+| <a name="input_switches"></a> [switches](#input\_switches) | Map of switches to configure with freeform CLI policy | <pre>map(object({<br>    name    = string<br>    fabric  = string<br>  }))</pre> | n/a | yes |
 
 ## Outputs
 
