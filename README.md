@@ -5,6 +5,8 @@ Terraform module for deploying freeform CLi configuration to one or more switche
 * Prefix lists
 * Route-maps
 
+Please see the example Terraform code that uses in this module in the `example` directory.
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
