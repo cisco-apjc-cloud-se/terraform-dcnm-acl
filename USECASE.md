@@ -5,7 +5,8 @@ Terraform module for deploying freeform CLi configuration to one or more switche
 * Prefix lists
 * Route-maps
 
-*Note:* Please be careful in the use of `switch_freeform` template instances  These should be used when no other options for freefrom configuration exists.  There are already options in NDFC for freeform configuration at the following locations and these should be used instead if appropriate:
+*Note:* Please be careful in the use of `switch_freeform` template instances.  These should be used when no other options for freefrom configuration exists.  There are already options in NDFC for freeform configuration at the following locations and these should be used instead if appropriate:
+
 - Fabric (All Leaf role switches, All Spine role switches, All ToR role switches)
 - Interfaces (inc. vPC interfaces)
 - VRFs (per VRF attachment/switch, not for all switches/attachments)
