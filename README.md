@@ -1,4 +1,7 @@
 # terraform-dcnm-freeform
+
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/terraform-cisco-modules/terraform-dcnm-freeform)
+
 Terraform module for deploying freeform CLi configuration to one or more switches.  This uses the `dcnm_policy` resource to deploy `switch_freeform` type templates. This should not be used for interface-level freeform CLI.  
 
 * Access control lists (ACLs)
