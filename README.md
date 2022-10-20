@@ -5,7 +5,63 @@ Terraform module for deploying freeform CLi configuration to one or more switche
 * Prefix lists
 * Route-maps
 
-Please see the example Terraform code that uses in this module in the `example` directory.
+The example code belows shows various options for using this module to deploy an ACL across selected switches.  For more details please see the example Terraform code that uses in this module in the `example` directory.
+
+```hcl
+## Example 1 - Single ACL Inline ##
+
+module "test-acl" {
+  source = "terraform-cisco-modules/dcnm/freeform"
+  version = "1.0.0"
+
+  content = <<-EOT
+  ip access-list TF-TEST-ACL
+    10 permit ip any any
+    20 permit ip 1.1.1.1/32 2.2.2.2/32
+  EOT
+  switches  = {
+    DC1-LEAF-1 = {
+      name = "DC1-LEAF-1"
+      fabric = "CML2-DC1"
+    }
+    DC1-LEAF-2 = {
+      name = "DC1-LEAF-2"
+      fabric = "CML2-DC1"
+    }
+  }
+}
+
+## Example 2 - Multiple ACLs from Input Variable ##
+
+module "acls" {
+  for_each = var.acls
+  source = "terraform-cisco-modules/dcnm/freeform"
+  version = "1.0.0"
+
+  content   = each.value.content
+  switches  = each.value.switches
+}
+
+
+## Example 3 - Single ACL read from text file ##
+
+module "file-acl" {
+  source = "terraform-cisco-modules/dcnm/freeform"
+  version = "1.0.0"
+
+  content = file("example_acl.txt")
+  switches  = {
+    DC1-LEAF-1 = {
+      name = "DC1-LEAF-1"
+      fabric = "CML2-DC1"
+    }
+    DC1-LEAF-2 = {
+      name = "DC1-LEAF-2"
+      fabric = "CML2-DC1"
+    }
+  }
+}
+```
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
