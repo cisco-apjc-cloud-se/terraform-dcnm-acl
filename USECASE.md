@@ -38,7 +38,7 @@ provider "dcnm" {
 ## Example 1 - Single ACL Inline ##
 
 module "test-acl" {
-  source = "terraform-cisco-modules/dcnm/freeform"
+  source  = "terraform-cisco-modules/freeform/dcnm"
   version = "1.0.0"
 
   content = <<-EOT
@@ -62,7 +62,7 @@ module "test-acl" {
 
 module "acls" {
   for_each = var.acls
-  source = "terraform-cisco-modules/dcnm/freeform"
+  source  = "terraform-cisco-modules/freeform/dcnm"
   version = "1.0.0"
 
   content   = each.value.content
@@ -73,7 +73,7 @@ module "acls" {
 ## Example 3 - Single ACL read from text file ##
 
 module "file-acl" {
-  source = "terraform-cisco-modules/dcnm/freeform"
+  source  = "terraform-cisco-modules/freeform/dcnm"
   version = "1.0.0"
 
   content = file("example_acl.txt")
